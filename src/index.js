@@ -91,7 +91,7 @@ function App() {
           <label id="en-translation"></label>
           </TranslatedBox>
           <TranslatedBox>
-          <h2>Espanish:</h2><br/>
+          <h2>Spanish:</h2><br/>
           <label id="es-translation"></label>
           </TranslatedBox>
           </div>
