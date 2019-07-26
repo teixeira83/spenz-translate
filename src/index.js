@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import Button from 'react-bootstrap/Button';
 import logo from './spenz.png'
+import mask from './mask.png'
 
 
 const config = require('./config')
@@ -30,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .div-translate {
-    display:flex;
+  
   }
 
   .input-translate{
@@ -56,13 +57,19 @@ const GlobalStyle = createGlobalStyle`
     width:150px;
     height:70px;
     margin-left: 45%;
-    margin-bottom: 100px;
+
+  }
+  .img-mask{
+    width:150px;
+    height:150px;
+    margin-left: 45%;
+    marign-top: 200px;
   }
 `;
 
 
 const TranslatedBox = styled.div`
-	width: 600px;
+	width: 500px;
 	min-height: 300px;
 	height: auto;
 	border-radius: 8px;
@@ -78,14 +85,14 @@ function App() {
 	return (
 		<React.Fragment>
 			<GlobalStyle />
-      
-      <img class="img-logo" src={logo}/>
-          <div class="div-translate">
+        <div class="container">
+          <div class="row">
+            <img class="img-mask" src={mask}/>
+            <img class="img-logo" src={logo}/>
             <input type="text" class="form-control col-sm-6 my-3" id="inputPassword" placeholder="Texto em português para traduzir" id="text"/>
             <Button variant="secondary btn-sm col-sm-3 my-3" onClick={translate}>Translate</Button>
           </div>
-          <div class="div-translate">
-
+          <div class="row div-translate">
           <TranslatedBox>
             <h2>English:</h2><br/>
           <label id="en-translation"></label>
@@ -94,7 +101,8 @@ function App() {
           <h2>Spanish:</h2><br/>
           <label id="es-translation"></label>
           </TranslatedBox>
-          </div>
+          </div>      
+       </div>
       </React.Fragment>
   );
 
